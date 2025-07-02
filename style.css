@@ -1,0 +1,357 @@
+:root {
+    --color-primary: #FF9933;
+    --color-background: #F2EECD;
+    --color-accent: #8B4513; 
+    --color-text: #333333;
+    --color-light-text: #f8f8f8;
+
+    /* Liquid Glass & Modern UI */
+    --color-card-background: rgba(255, 255, 255, 0.6); /* Slightly transparent white */
+    --color-card-border: rgba(255, 255, 255, 0.2); /* Even more subtle border */
+    --color-header-background: rgba(255, 255, 255, 0.7); /* Header transparency */
+
+    /* Typography */
+    --font-body: 'Alegreya', serif;
+    --font-heading: 'Belleza', sans-serif;
+
+    /* Shadows for depth */
+    --shadow-subtle: 0 0.5px 1.5px rgba(0,0,0,0.03), 0 0.5px 1px rgba(0,0,0,0.06);
+    --shadow-medium: 0 1.5px 3px rgba(0,0,0,0.05), 0 1.5px 3px rgba(0,0,0,0.08);
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    margin-bottom: 0.8em;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+.header {
+    background-color: var(--color-header-background);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 0.4rem 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow-subtle);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.header-call-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--color-primary);
+    color: var(--color-light-text);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-subtle);
+}
+
+.header-call-button:hover {
+    background-color: #E68A2E; /* Slightly darker primary */
+    box-shadow: var(--shadow-medium);
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x800/FF9933/FFFFFF?text=Char+Dham+Yatra') no-repeat center center/cover;
+    color: var(--color-light-text);
+    text-align: center;
+    padding: 6rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h2 {
+    color: var(--color-light-text);
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5em;
+}
+
+.hero-call-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-light-text);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-medium);
+}
+
+.hero-call-button:hover {
+    background-color: #7A3B10; /* Slightly darker accent */
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+    text-decoration: none;
+}
+
+/* Tours Overview */
+.tours-overview {
+    padding: 4rem 0;
+    background-color: var(--color-background);
+    text-align: center;
+}
+
+.tour-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tour-cards .card {
+    background-color: var(--color-card-background);
+    border: 1px solid var(--color-card-border);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.tour-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.tour-cards .card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.tour-cards h4 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+}
+
+/* Package Details */
+.package-details {
+    padding: 4rem 0;
+    background-color: #E6E0C7; /* Slightly darker background for contrast */
+}
+
+.package-info {
+    background-color: var(--color-card-background);
+    border: 1px solid var(--color-card-border);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow-subtle);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-top: 2rem;
+}
+
+.package-info ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5em;
+}
+
+.package-info ul li {
+    margin-bottom: 0.5em;
+    position: relative;
+    padding-left: 1.5em;
+}
+
+.package-info ul li::before {
+    content: '✓';
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+}
+
+.package-info strong {
+    color: var(--color-accent);
+}
+
+.call-action {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Floating Call Button */
+.floating-call-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-light-text);
+    border-radius: 50px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-medium);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.floating-call-button:hover {
+    background-color: #E68A2E; /* Darker primary */
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.floating-call-button svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Media Queries for Desktop */
+@media (min-width: 768px) {
+    .hero {
+        min-height: 80vh;
+        padding: 8rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 4rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    .tour-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .package-info {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .floating-call-button {
+        bottom: 30px;
+        right: 30px;
+        padding: 18px 25px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo {
+        font-size: 2.2rem;
+    }
+
+    .hero h2 {
+        font-size: 5rem;
+    }
+
+    .hero p {
+        font-size: 1.7rem;
+    }
+
+    .tour-cards .card {
+        padding: 2.5rem;
+    }
+
+    .package-info {
+        padding: 3rem;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--color-accent);
+    color: var(--color-light-text);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+}
+
+.footer p {
+    margin-bottom: 0.5em;
+}
